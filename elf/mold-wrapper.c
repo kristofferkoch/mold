@@ -57,7 +57,7 @@ static void copy_args(char **argv, const char *arg0, va_list *ap) {
 
 static bool is_ld(const char *path) {
   const char *ptr = path + strlen(path);
-  while (path < ptr && ptr[-1] != '/')
+  while (path < ptr && ptr[-1] != '/'&& ptr[-1] != '-')
     ptr--;
 
   return !strcmp(ptr, "ld") || !strcmp(ptr, "ld.lld") ||
